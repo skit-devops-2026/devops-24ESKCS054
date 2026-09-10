@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+            margin: 0;
+            padding: 0;
+            font-family: "Lato", sans-serif;
+        }
+        .headerwrapper{
+            border-color: #FFFFFF;
+            background-color: #FFFFFF;
+        }
+        .maincontainer{
+             height: 32px;
+             background-color: #F2EEE2;
+             color: #6E491C;
+        }
+        .offertext{
+           font-size: 500;
+           font-size: 16px;
+        }
+        .off{
+            color: #8C9B7C;
+        }
+        .headerdropdown select{
+            color: #6E491C;
+        }
+        .headerdropdown option{
+            color: #6E491C;
+        }
+        
+     
+        .icon-box{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #6E491C;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6E491C;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icon-box:hover{
+    background-color: #ecdac4;
+    color:#6E491C;
+}
+
+        .search-bar{
+           position: relative;
+        }
+
+        .search{
+            background-color: #ece8e8;
+           width: 100%;
+           height: 44px;
+           border-radius: 108px;
+           border: 1px solid #eee7e7;
+           padding-left: 40px;
+        }
+        .search-bar{
+    position: relative;
+}
+
+.search-icon{
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #6E491C;
+}
+         
+       
+        input::placeholder{
+            color: #6E491C;
+            height: 19px;
+            width: 220px;
+            font-size: 16px;
+            font-weight: 400;
+            padding-left: 40px;
+        }
+        
+      .ps-5 {
+         padding-left: 10rem !important;
+             }
+
+        .menu .service{
+        text-decoration: none;
+        border: none;
+        outline: none;
+       background: transparent;
+       font-size: 16px;
+       color: #6E491C;
+       font-weight: 700;
+      cursor: pointer;
+      padding: 8px 12px;
+    }
+
+    .menu .service:hover{
+       color: #8b5a2b;
+       text-decoration: underline;
+    }
+    .menu .service{
+     background: white;
+     color: #6E491C;
+     font-size: 16px;
+     padding: 10px;
+  }   
+.mobile-link{
+    display:block;
+    text-decoration:none;
+    color:#6E491C;
+    font-size:17px;
+    font-weight:600;
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+}
+
+.mobile-link:hover{
+    color:#8b5a2b;
+}
+    .chat-box-icons{
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chat-box{
+    width: 40px;
+    height: 40px;
+    background: #6E491C;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+.whatsapp-box{
+    background:#90AF51;
+}
+.call-box{
+    background: #6E491C;
+}
+
+.message-box{
+    background: #6E491C;
+}
+.whatsapp,
+.cell{
+    width: 30px;
+    height: 30px;
+}
+@media (max-width:768px){
+
+.chat-box-icons{
+    right:10px;
+}
+
+.chat-box{
+    width:45px;
+    height:45px;
+}
+
+.whatsapp,
+.cell{
+    width:24px;
+    height:24px;
+}
+
+}         
+main{
+    position: relative;
+}
+         .content{
+           position: absolute;
+           top: 45%;
+           right: 5%;
+            transform: translateY(-50%);
+          width: 40%;
+          }
+         .text{
+             color: #6E491C;
+             text-align: left;
+               }
+         .card-container{
+             background-color: #F6F2EC;
+                        }
+          .text-center{
+              color: #6E491C;
+                      }
+           @media (max-width:768px){
+             .text h1 p{
+                font-size: 16px;
+                line-height: 5px;
+             }
+           }
+            @media (min-width:576px){
+             .text h1 p{
+                font-size: 16px;
+                line-height: 5px;
+             }
+           }
+
+
+           .service-card{
+             width:100%;
+             min-height:382px;
+            border:2px solid #90AF51;
+            border-radius:8px;
+         }
+
+         /* footer */
+         footer{
+            background-color:#90af51;
+            color: #FFFFFF;
+         }
+         footer h5{
+            text-decoration: underline;
+         }
+         .footer-link .service{
+            color: #FFFFFF;
+            text-decoration: none;
+         }
