@@ -1,36 +1,45 @@
-\# Project ELARA
+﻿# Project ELARA
 
+Project ELARA is a full-stack web application with separate User and Admin applications.
 
+## Author
 
-Project ELARA is a web-based application developed as a full-stack project with separate User and Admin applications.
+| Roll No | Name | GitHub Username |
+|---|---|---|
+| 24ESKCS054 | Anurag Gurjar | anuraggurjar96 |
+| 24ESKCS054 | Anurag Gurjar | anuraggurjar96 |
 
+## Project Structure
 
+- User/ — User application
+- dmin/ — Admin application
+- ackend/ — Backend application
+- 	ests/ — Automated tests
+- .github/workflows/ci.yml — GitHub Actions CI
+- Jenkinsfile — Jenkins pipeline
+- Makefile — Project automation commands
+- scripts/ — Repository checks
+- docs/ — Documentation
+- monitoring/ — Monitoring configuration
+- k8s/ — Kubernetes manifests
 
-\## Project Structure
+## DevOps
 
+The project uses GitHub Actions for continuous integration and automated testing.
 
+The CI pipeline performs:
+- Repository hygiene checks
+- Dependency installation
+- Automated tests
+- User application build
+- Admin application build
 
-```text
+Jenkins is used for the CI/CD pipeline.
 
-Project-ELARA/
+## Health Endpoint
 
-├── User/                  # User application
+GET /health returns the running commit SHA.
 
-├── admin/                 # Admin application
+## Repository
 
-├── backend/               # Backend application
-
-├── tests/                 # Automated tests
-
-├── .github/
-
-│   └── workflows/
-
-│       └── ci.yml         # GitHub Actions CI pipeline
-
-├── Jenkinsfile            # Jenkins pipeline
-
-├── .gitignore             # Git ignore rules
-
-└── README.md              # Project documentation
-
+https://github.com/skit-devops-2026/devops-24ESKCS054
