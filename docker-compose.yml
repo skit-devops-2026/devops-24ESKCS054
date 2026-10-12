@@ -1,0 +1,31 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file:
+      - backend/.env
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+  user-frontend:
+    build:
+      context: .
+      dockerfile: User/Dockerfile
+    ports:
+      - "8082:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  admin-frontend:
+    build:
+      context: .
+      dockerfile: admin/Dockerfile
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+

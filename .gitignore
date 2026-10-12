@@ -5,3 +5,9 @@ backend_local_backup/
 **/dist/
 backend/.env
 backend_incomplete/
+
+# Local Docker-edit backups
+*.docker-backup
+
+# Uploaded user files
+backend/uploads/
