@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elara-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elara-backend
+  template:
+    metadata:
+      labels:
+        app: elara-backend
+    spec:
+      containers:
+        - name: backend
+          image: anuraggurjar96/projectelara-backend:mt2
+          ports:
+            - containerPort: 5000
+          env:
+            - name: PORT
+              value: "5000"
+            - name: MONGO_URI
+              valueFrom:
+                secretKeyRef:
+                  name: elara-secrets
+                  key: mongo-uri
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: elara-secrets
+                  key: jwt-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elara-backend
+spec:
+  selector:
+    app: elara-backend
+  ports:
+    - port: 5000
+      targetPort: 5000
+  type: ClusterIP

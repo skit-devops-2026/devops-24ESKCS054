@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elara-user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elara-user
+  template:
+    metadata:
+      labels:
+        app: elara-user
+    spec:
+      containers:
+        - name: frontend
+          image: anuraggurjar96/projectelara-user-frontend:mt2
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elara-user
+spec:
+  selector:
+    app: elara-user
+  ports:
+    - port: 80
+      targetPort: 80
+  type: NodePort
