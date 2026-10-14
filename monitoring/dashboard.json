@@ -1,30 +1,27 @@
 {
-  "title": "Project Elara Monitoring",
   "uid": "project-elara",
+  "title": "Project Elara Monitoring",
+  "tags": ["project-elara"],
+  "timezone": "browser",
   "schemaVersion": 39,
   "version": 1,
+  "refresh": "15s",
   "panels": [
     {
       "id": 1,
       "type": "timeseries",
-      "title": "Prometheus Targets Up",
-      "datasource": {
-        "type": "prometheus",
-        "uid": "prometheus"
-      },
-      "targets": [
-        {
-          "expr": "up",
-          "legendFormat": "{{job}}",
-          "refId": "A"
-        }
-      ],
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 0
-      }
+      "title": "Backend Availability",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"expr": "up{job=\"project-elara-backend\"}", "legendFormat": "Backend", "refId": "A"}]
+    },
+    {
+      "id": 2,
+      "type": "timeseries",
+      "title": "Node.js Heap Memory",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"expr": "process_resident_memory_bytes", "legendFormat": "Memory", "refId": "A"}]
     }
   ]
 }

@@ -1,0 +1,9 @@
+apiVersion: 1
+providers:
+  - name: Project Elara
+    orgId: 1
+    folder: Project Elara
+    type: file
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards
