@@ -78,17 +78,20 @@ Monitoring screenshot: [`docs/monitoring-dashboard.png`](docs/monitoring-dashboa
 Runs on Docker Desktop Kubernetes.
 
 ```bash
-# Apply manifests
+# Apply all manifests
 kubectl apply -f k8s/backend.yaml
 kubectl apply -f k8s/user-frontend.yaml
+kubectl apply -f k8s/admin-frontend.yaml
 
-# Check status
-kubectl get pods
+# Verify pods
+kubectl get pods -o wide
+kubectl get deployments
 kubectl get services
 
-# Services:
+# Running services:
 # elara-backend  ClusterIP  port 5000
-# elara-user     NodePort   port 31984
+# elara-user     NodePort   port 80:31984
+# elara-admin    NodePort   port 80:31985
 ```
 
 Secrets are stored in the `elara-secrets` Kubernetes Secret (never committed to Git).
