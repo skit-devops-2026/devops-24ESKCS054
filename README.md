@@ -1,5 +1,8 @@
 # Project ELARA
 
+> **Live Public URL (User Frontend):** https://dd96fa21bd659e.lhr.life
+> *(Tunneled via localhost.run — active while Docker Compose is running)*
+
 Project ELARA is a full-stack healthcare service booking web application with separate User and Admin frontends backed by a Node.js/Express REST API connected to MongoDB Atlas.
 
 ## Author
