@@ -1,106 +1,65 @@
-const User=require("../models/User");
 
-const bcrypt=require("bcrypt");
+const User = require("../models/User");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
-const jwt=require("jsonwebtoken");
+exports.login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
 
-exports.login=async(req,res)=>{
+        const user = await User.findOne({ email });
 
-    try{
-
-        const {email,password}=req.body;
-
-
-        const user=await User.findOne({email});
-
-        if(!user){
-
+        if (!user) {
             return res.status(404).json({
-
-                message:"User Not Found"
-
+                message: "User Not Found"
             });
-
         }
 
-        const isMatch=await bcrypt.compare(
-
+        const isMatch = await bcrypt.compare(
             password,
-
             user.password
-
         );
 
-        if(!isMatch){
-
+        if (!isMatch) {
             return res.status(401).json({
-
-                message:"Invalid Password"
-
+                message: "Invalid Password"
             });
-
         }
 
-        const token=jwt.sign(
-
+        const token = jwt.sign(
             {
-
-                id:user._id
-
+                id: user._id
             },
-
             process.env.JWT_SECRET,
-
             {
-
-                expiresIn:"1h"
-
+                expiresIn: "1h"
             }
-
         );
 
-        res.json({
+        return res.json({ token });
 
-            token
+    } catch (error) {
+        console.error("Login error:", error.message);
 
+        return res.status(500).json({
+            message: "Internal server error"
         });
-
     }
-
-    catch(error){
-
-        res.status(500).json({
-
-            message:error.message
-
-        });
-
-    }
-
 };
 
-exports.profile=async(req,res)=>{
-
-    try{
-
-        const user=await User.findById(
-
+exports.profile = async (req, res) => {
+    try {
+        const user = await User.findById(
             req.user.id
-
         ).select("-password");
 
-        res.json(user);
+        return res.json(user);
 
-    }
+    } catch (error) {
+        console.error("Profile error:", error.message);
 
-    catch(error){
-
-        res.status(500).json({
-
-            message:error.message
-
+        return res.status(500).json({
+            message: "Internal server error"
         });
-
     }
-
 };

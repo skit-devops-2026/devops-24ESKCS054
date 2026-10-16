@@ -1,4 +1,4 @@
-import "./ServiceList.css"
+﻿import "./ServiceList.css"
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import API from "../api/serviceApi";
@@ -50,7 +50,7 @@ const ServiceList = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-md-6 col-12 serviceimg">
-                          <img src={`http://localhost:3000/api/service/image/${service.image}`}
+                          <img src={`http://localhost:5000/api/service/image/${service.image}`}
                             alt={service.name} className="img-fluid rounded"/>
                         </div>
 
@@ -62,7 +62,7 @@ const ServiceList = () => {
                             <div className="d-flex mt-3"> 
                                 <div className="col-lg-4 col-md-6">
                                      <div className="qty-box">
-                                        <button className="qty-btn" onClick={decrease}>−</button>
+                                        <button className="qty-btn" onClick={decrease}>âˆ’</button>
                                             <span className="qty-count">{count}</span>
                                         <button className="qty-btn" onClick={increase}>+</button>
                                     </div>
@@ -269,7 +269,7 @@ const ServiceList = () => {
         <div className="input-group mb-3">
 
           <span className="input-group-text bg-white rounded-start-pill">
-            🇦🇪 +91
+            ðŸ‡¦ðŸ‡ª +91
           </span>
 
           <input

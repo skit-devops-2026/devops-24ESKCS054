@@ -15,6 +15,7 @@ spec:
       containers:
         - name: backend
           image: anuraggurjar96/projectelara-backend:mt2
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
           env:
@@ -30,6 +31,21 @@ spec:
                 secretKeyRef:
                   name: elara-secrets
                   key: jwt-secret
+            - name: ADMIN_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: elara-secrets
+                  key: admin-name
+            - name: ADMIN_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: elara-secrets
+                  key: admin-email
+            - name: ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: elara-secrets
+                  key: admin-password
 ---
 apiVersion: v1
 kind: Service

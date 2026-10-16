@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import API from "../api/serviceApi";
@@ -467,7 +467,7 @@ useEffect(()=>{
                         <div className="service-card p-2">
 
                             <img
-                                src={`http://localhost:3000/api/service/image/${item.image}`}
+                                src={`http://localhost:5000/api/service/image/${item.image}`}
                                 className="service-image card-img-top rounded-circle p-2"
                                 alt={item.name}  />
 

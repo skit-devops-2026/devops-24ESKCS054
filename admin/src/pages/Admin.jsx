@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react";
+﻿import React,{useEffect,useState} from "react";
 import API from "../api/categoryApi";
 import {Link} from 'react-router-dom'
 import "./Admin.css"
@@ -209,7 +209,7 @@ getCategory();
                                   <th>{index+1}</th>
                                  <td>{item._id}</td>
                                  <td>{item.name}</td>
-                                 <td><img src={`http://localhost:3000/uploads/${item.image}`}
+                                 <td><img src={`http://localhost:5000/uploads/${item.image}`}
                                 width="70" height="70"
                               alt={item.name}/>
                                  </td>
@@ -244,7 +244,7 @@ getCategory();
                            </div>
                            <div className="modal-body">
                               <div className="text-center">
-                                <img src={`http://localhost:3000/uploads/${viewCategory.image}`}
+                                <img src={`http://localhost:5000/uploads/${viewCategory.image}`}
                                  width="120" height="120" alt={viewCategory.name}/>
                               </div>
                               <hr/>
@@ -272,7 +272,7 @@ getCategory();
                               <input type="text" name="name" className="form-control" value={editCategory.name || ""}
                                onChange={handleChange} />
                            <br/> 
-                           <img  src={`http://localhost:3000/uploads/${editCategory.image}`}  width="120"
+                           <img  src={`http://localhost:5000/uploads/${editCategory.image}`}  width="120"
                                height="120"  alt=""/>
                            <br/><br/>
                            <input type="file" className="form-control"
@@ -307,3 +307,4 @@ getCategory();
 }
 
 export default Admin
+

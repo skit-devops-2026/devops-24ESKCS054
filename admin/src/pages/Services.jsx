@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import API from "../api/serviceApi";
 import {Link} from 'react-router-dom'
 import "./Admin.css"
@@ -243,7 +243,7 @@ useEffect(() => {
                                           <td>{item.gender}</td>
                                           <td>{item.vital}</td>
                                           <td>{item.preventiveWellness}</td>
-                                          <td><img src={`http://localhost:3000/uploads/${item.image}`} width="70" height="70"
+                                          <td><img src={`http://localhost:5000/uploads/${item.image}`} width="70" height="70"
                                           alt={item.service}/>
                                           </td>
                                           <td>{item.shortDescription}</td>
@@ -271,7 +271,7 @@ useEffect(() => {
                                  </div> 
                                  <div className="modal-body">  
                                     <div className="text-center">
-                                     <img src={`http://localhost:3000/uploads/${viewService.image}`} width="180" height="180" alt=""/>
+                                     <img src={`http://localhost:5000/uploads/${viewService.image}`} width="180" height="180" alt=""/>
                                     </div>   
                                     <hr/>
                                     <h5>Name :{viewService.name}</h5>
@@ -282,8 +282,8 @@ useEffect(() => {
                                     <p>Preventive Wellness :{viewService.preventiveWellness}</p>
                                     <p>Short Description :{viewService.shortDescription}</p>
                                     <p>Long Description :{viewService.longDescription}</p>
-                                    <p>MRP :₹ {viewService.mrp}</p>
-                                    <p>Selling Price :₹ {viewService.sellingPrice}</p>
+                                    <p>MRP :â‚¹ {viewService.mrp}</p>
+                                    <p>Selling Price :â‚¹ {viewService.sellingPrice}</p>
                                     <p>Status :{viewService.status?"Active":"Inactive"}</p>
                                  </div>   
                                  <div className="modal-footer">
@@ -370,7 +370,7 @@ useEffect(() => {
             <label>Current Image</label>
             <br />
             {editService._id && (
-              <img src={`http://localhost:3000/uploads/${editService.image}`} width="120" height="120" alt=""/>
+              <img src={`http://localhost:5000/uploads/${editService.image}`} width="120" height="120" alt=""/>
                )}
           </div>
           {/* New Image */}
@@ -399,4 +399,5 @@ useEffect(() => {
 }
 
 export default Services
+
 

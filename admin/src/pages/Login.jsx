@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import {Link} from 'react-router-dom'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +24,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    // ⚠️ MAINE YAHAN 3000 PORT KO BADALKAR 5000 KAR DIYA HAI
+    // âš ï¸ MAINE YAHAN 3000 PORT KO BADALKAR 5000 KAR DIYA HAI
     const res = await axios.post(
       "http://localhost:5000/api/auth/login",
       formData
@@ -76,3 +76,4 @@ const handleSubmit = async (e) => {
 }
 
 export default Login
+
