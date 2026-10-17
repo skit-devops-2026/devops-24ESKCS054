@@ -113,3 +113,9 @@ Evidence: [`docs/kubectl-pods.txt`](docs/kubectl-pods.txt) | [`docs/kubectl-pods
 ## Repository
 
 https://github.com/skit-devops-2026/devops-24ESKCS054
+
+## Live Deployment
+
+- User Frontend: https://projectelara-user.onrender.com
+- Admin Frontend: https://projectelara-admin.onrender.com
+- Backend Metrics: https://projectelara-backend.onrender.com/metrics
