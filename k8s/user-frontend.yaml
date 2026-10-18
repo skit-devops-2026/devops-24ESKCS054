@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,6 +16,7 @@ spec:
       containers:
         - name: frontend
           image: anuraggurjar96/projectelara-user-frontend:mt2
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
 ---
