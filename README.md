@@ -35,6 +35,14 @@ Project ELARA/
 | User Frontend | `anuraggurjar96/projectelara-user-frontend:mt2` |
 | Admin Frontend | `anuraggurjar96/projectelara-admin-frontend:mt2` |
 
+## GitHub Container Registry (GHCR) Images
+
+| Service | Image |
+|---|---|
+| Backend | `ghcr.io/skit-devops-2026/devops-24eskcs054-backend:latest` |
+| User Frontend | `ghcr.io/skit-devops-2026/devops-24eskcs054-user-frontend:latest` |
+| Admin Frontend | `ghcr.io/skit-devops-2026/devops-24eskcs054-admin-frontend:latest` |
+
 ## Running with Docker Compose
 
 ```bash
@@ -78,9 +86,9 @@ Runs on Docker Desktop Kubernetes.
 
 ```bash
 # Apply all manifests
-kubectl apply -f k8s/backend.yaml
-kubectl apply -f k8s/user-frontend.yaml
-kubectl apply -f k8s/admin-frontend.yaml
+kubectl apply -f k8s/backend-deployment-service.yaml
+kubectl apply -f k8s/user-frontend-deployment-service.yaml
+kubectl apply -f k8s/admin-frontend-deployment-service.yaml
 
 # Verify pods
 kubectl get pods -o wide
@@ -112,6 +120,14 @@ Evidence: [`docs/kubectl-pods.txt`](docs/kubectl-pods.txt) | [`docs/kubectl-pods
 ## Repository
 
 https://github.com/skit-devops-2026/devops-24ESKCS054
+
+## Live URL
+
+https://projectelara-user.onrender.com
+
+- User Frontend: https://projectelara-user.onrender.com
+- Admin Frontend: https://projectelara-admin.onrender.com
+- Backend Metrics: https://projectelara-backend.onrender.com/metrics
 
 ## Live Deployment
 
